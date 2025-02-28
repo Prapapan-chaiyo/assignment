@@ -1,0 +1,5 @@
+remote_url: http://localhost:4723/wd/hub
+deviceName: emulator-5554  
+platformVersion: '12.0'
+platformName: Android
+app: /Users/prapapan.c/Desktop/app-release.apk

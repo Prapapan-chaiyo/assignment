@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code From Git') {
+            steps {
+                git 'https://github.com/Prapapan-chaiyo/assignment'
+            }
+        }
+
+        stage('Run Test Automate') {
+            steps {
+                sh '''
+                robot -d result/quiz_1 quiz_1/
+                robot -d result/quiz_2 quiz_2/
+                robot -d result/quiz_3 quiz_3/
+                robot -d result/quiz_4 quiz_4/
+                robot -d result/quiz_5 quiz_5/
+                robot -d result/quiz_6 quiz_6/
+                '''
+            }
+        }
+
+        stage('Send Result To Jenkins') {
+            steps {
+                publishHTML(target: [
+                    reportDir: 'result',
+                    reportFiles: 'log.html',
+                    reportName: 'Robot Test Report'
+                ])
+                archiveArtifacts artifacts: 'result/*.xml', fingerprint: true
+            }
+        }
+    }
+}

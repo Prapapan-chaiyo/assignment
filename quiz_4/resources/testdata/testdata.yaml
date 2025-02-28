@@ -1,0 +1,6 @@
+list:
+  empty: You don't have any todos
+title:
+  name: Test todo
+  date_today: Today
+  name_edit: Test todo edit
