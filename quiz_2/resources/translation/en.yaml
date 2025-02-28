@@ -1,0 +1,10 @@
+login_page:
+  title: Login Page
+  login_button: Login
+  logout_button: Logout
+message:
+  state_login: You logged into a secure area!
+  state_logout: You logged out of the secure area!
+  state_login_failed: Your password is invalid!
+  state_user_not_found: Your username is invalid!
+  
